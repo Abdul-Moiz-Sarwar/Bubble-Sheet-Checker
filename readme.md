@@ -5,14 +5,23 @@ This project processes an input image to:
 2. Divide the image into a grid of 10x4 (10 rows and 4 columns).
 3. Calculate the black-to-white pixel ratio for each cell and analyze the results.
 4. Identify and validate choices based on detected pixel patterns in the grid.
+5. Optionally allows users to upload a custom image for processing and analysis.
 
-The project is designed for tasks such as detecting marked answers on grids, with added functionality for error detection and choice validation.
+The project is designed for tasks such as detecting marked answers on grids, with added functionality for error detection, choice validation, and an interactive user interface.
+
+---
 
 ## Features
-- Convert images to binary with a custom thresholding algorithm.
-- Analyze images by dividing them into a grid.
-- Calculate pixel ratios and determine marked cells.
-- Output results for multiple-choice grids, including errors or identified choices.
+- **Streamlit Interface**: 
+  - Displays input images, binary images, and grid analysis images side by side.
+  - Includes an optional image uploader for processing custom images.
+- **Binary Conversion**: Convert images to binary with a custom thresholding algorithm.
+- **Grid Analysis**: 
+  - Divide the image into a grid.
+  - Calculate pixel ratios and determine marked cells.
+  - Overlay detected markings on the grid.
+- **Answer Validation**: Output results for multiple-choice grids, including errors or identified choices.
+- **Interactive Output**: View images and results directly in the browser.
 
 ---
 
@@ -23,6 +32,7 @@ Follow these steps to get the project running on your local machine:
 ### Prerequisites
 - Python 3.7 or higher
 - pip (Python package installer)
+- Streamlit
 
 ### Steps
 1. Clone the repository:
@@ -43,41 +53,46 @@ Follow these steps to get the project running on your local machine:
     pip install -r requirements.txt
     ```
 
-4. Run the main script:
+4. Run the Streamlit app:
     ```bash
-    python script.py
+    streamlit run script.py
     ```
 
 ---
 
 ## Usage
-1. Place the input image in the project directory.
-2. Update the image path in the script if necessary.
-3. Execute the script to generate:
-    - A binary image (`binary_image.jpg`).
-    - A grid image (`grid_image.jpg`).
-    - A results image (`grid_with_analysis.jpg`).
-    - Analysis results printed to the console.
+
+### Upload Custom Image
+1. Run the Streamlit app using `streamlit run script.py`.
+2. Open the provided URL in a web browser (e.g., `http://localhost:8501`).
+3. Upload a custom image using the file uploader, or use the default predefined image.
+4. The app will:
+   - Display the input image, binary image, and grid analysis image side by side.
+   - Provide analysis results below the images, including detected choices and validation.
 
 ---
 
 ## Example Output
-- **Binary Image**: Saved as `binary_image.jpg`.
-- **Grid Image**: Saved as `grid_image.jpg`.
-- **Analysis Image**: Saved as `grid_with_analysis.jpg`.
-- **Console Output**:
-    ```
-    Q1: Choice made: A (Correct)
-    Q2: Multiple Choices Found: A, C
-    Q3: Choice made: A (Incorrect, Correct Answer: B)
-    Q4: No Choice Found
-    ```
+
+### Images
+- **Input Image**: The original image (uploaded or predefined).
+- **Binary Image**: Image converted into binary format.
+- **Grid Analysis Image**: Grid overlay with detected markings highlighted.
+
+### Results (Console Output in the Browser)
+```
+Q1: Choice made: A (Correct)
+Q2: Multiple Choices Found: A, C
+Q3: Choice made: A (Incorrect, Correct Answer: B)
+Q4: No Choice Found
+```
 
 ---
 
 ## Collaborators
 
 This project was developed as a group effort. The contributors are:
-- **Asher Nadeem** ([View Profile](https://github.com/asharnadeem002))
-- **Abdul Moiz Sarwar** ([View Profile](https://github.com/Abdul-Moiz-Sarwar))
+- **Ashar Nadeem 21L-5336** ([View Profile](https://github.com/asharnadeem002))
+- **Abdul Moiz Sarwar 21L-5203** ([View Profile](https://github.com/Abdul-Moiz-Sarwar))
+
 ---
